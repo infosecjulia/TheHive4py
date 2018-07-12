@@ -15,9 +15,12 @@ api = TheHiveApi('http://127.0.0.1:9000', '**YOUR_API_KEY**')
 
 # Prepare the sample case
 tasks = [
-    CaseTask(title='Tracking'),
-    CaseTask(title='Communication'),
-    CaseTask(title='Investigation', status='Waiting', flag=True)
+    CaseTask(title='Identify'),
+    CaseTask(title='Contain'),
+    CaseTask(title='Investigate'),
+    CaseTask(title='Eradicate'),
+    CaseTask(title='Recovery'),
+    CaseTask(title='Lessons Learned', status='Waiting', flag=True)
 ]
 
 # Prepare the custom fields
@@ -28,7 +31,7 @@ customFields = CustomFieldHelper()\
     .add_number('cvss', 9)\
     .build()
 
-case = Case(title='From TheHive4Py',
+case = Case(title='Account Compromise',
             tlp=3,
             flag=True,
             tags=['TheHive4Py', 'sample'],
